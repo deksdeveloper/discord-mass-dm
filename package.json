@@ -1,0 +1,17 @@
+{
+    "name": "discord-mass-dm",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "author": "deksdeveloper",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/deksdeveloper/discord-mass-dm"
+    },
+    "license": "MIT",
+    "dependencies": {
+      "discord.js": "^14.14.1"
+    }
+  }
