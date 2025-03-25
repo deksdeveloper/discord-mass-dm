@@ -39,3 +39,7 @@ In a Discord server, use the command: `!announce #channel [message]`
 - Embedded announcement messages
 - Logging of transmission statistics
 - Progress tracking during announcement
+
+## Discord Support Server
+- Join our Discord support server for help and updates: [Support Server](https://discord.gg/n3BnCfVBeA)
+
