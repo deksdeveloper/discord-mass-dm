@@ -29,7 +29,6 @@ class AnnouncementBot {
             }
 
             this.setupEventListeners();
-
             this.start();
         } catch (error) {
             console.error('Bot initialization error:', error);
@@ -138,16 +137,20 @@ class AnnouncementBot {
                 return message.reply('❌ You do not have permission to use this command.');
             }
 
-            const args = message.content.split(' ');
-            if (args.length < 3) {
-                return message.reply('!announce #channel [message]');
-            }
-
             const channel = message.mentions.channels.first();
-            if (!channel && message.author.id != this.client.user.id) {
+            
+            if (!channel) {
                 return message.reply('You must specify a valid channel.');
             }
-            const announcementMessage = args.slice(2).join(' ');
+
+            const announcementMessage = message.content
+                .replace(/^!announce\s+<#\d+>\s*/, '')
+                .trim();
+
+            if (!announcementMessage) {
+                return message.reply('Please provide an announcement message.');
+            }
+
             await this.sendAnnouncement(message, announcementMessage, channel);
         });
     }
